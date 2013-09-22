@@ -1,6 +1,17 @@
 SuperCluster
 ============
 
+# Note on Discovery
+
+Because it keeps coming up: it well-understood that UDP multicast discovery does
+not work in any case except when all hosts are on the same subnet. Trackers
+employing HTTP REST APIs are the solution for nodes where the number is a few
+thousand or less and spread across the Internet. If there is need for larger
+networkers, a DHT should scale into the millions, but has latency and
+synchronization issues we'll have to solves.
+
+# SuperCluster Overview
+
 A module to make it easy to distribute work across multiple network-connected
 hosts.
 
