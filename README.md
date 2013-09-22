@@ -88,23 +88,12 @@ be sent to that worker with no action required by the developer.
 * 'workerUnavailable' - The woker was lost.
   * arg: worker id
 
-// FIXME
-
-* 'workerTaskComplete' - worker completed its task
-  * arg: worker object
-  * arg: task object
-
 ##### Worker
 
 * 'masterAvailable' - master available to give work
   * arg: master object
 * 'masterUnavailable' - master heartbeat lost, perhaps it died?
   * arg: master object
-
-// FIXME
-* 'TaskReceived' - master object sent a task
-  * arg: master object
-  * task object
 
 ##### Tracker
 
@@ -255,3 +244,79 @@ task.
       workers resulting from a query.
     * sendTaskToAll\(TaskObj|Function, cb(err, results\[\]\) Send a task to all
       workers, the results or error arrive in the callback.
+
+### Worker Work Interface
+
+The work events are largely informational. Developers do not have to listen for
+these events unless they want to do something in addition to what nnet already
+does.
+
+* Event: 'taskReceived' - This worker now has work.
+  * master object
+  * task object
+* Class Worker
+  * sendToMaster\('event', \[data\]\) - send an event with optional data to the
+master.
+  * sendTo\(worker|\[wrk1,wrk2,...\], 'event', \[data\]\) - send a single worker or
+an array or workers a message with optional data.
+  * sendToAll\('event', \[data\]\) - send an event to all workers with optional
+data.
+  * setAvailability\(Boolean\) - Allows a worker to remove itself from the list of
+available workers if false and to re-enter the list if true.
+  * setProgress\(percent\) - Optional convenience function to send a progress
+message to the master.
+
+## Task Object
+Tasks are abstractions to describe work to be done on remote machines and the
+dependencies to do the work. In most cases, a task can be substituted with a
+function. Use a task if your code has dependencies, like npm modules you require
+or the code you want to execute has multiple files.
+
+Task Data members of task with their meanings:
+
+    {
+      name: "TaskName",
+
+      // a package.json for the Task
+      // `npm install` will be run after the package.json is saved.
+      package_json: {
+      {
+        respository: {
+          type: "git",
+          url: "git://github.com/hookio/hook.io.git"
+        },
+        [...]
+      },
+
+      run: {
+        file: "filePath",
+        function: "function",
+        args: ARRAY,
+        cwd: "path",
+      },
+
+      deleteWhenDone: false,    // true by default
+
+      // after completion, will have:
+      result: {
+        exitCode: 0,
+        error: "String",
+        errno: num,
+        data: {}      // user defined
+      }
+    }
+
+## Simplest example:
+The simplest example is a worker and a master on the same network.
+
+worker:
+
+    var nnet = require('nnet');
+    var worker = nnet.createWorker();
+
+master:
+
+    var master = require('nnet').createMaster();
+    master.on('workerAvailable', function(worker) {
+      master.sendTo(worker, function() { console.log('Hello World');
+    });
