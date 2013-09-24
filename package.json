@@ -1,0 +1,28 @@
+{
+  "name": "supercluster",
+  "version": "0.0.0",
+  "description": "Enables distributed programming with Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/strongloop/supercluster.git"
+  },
+  "keywords": [
+    "distributed",
+    "network",
+    "programming"
+  ],
+  "author": "Edmond Meinfelder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strongloop/supercluster/issues"
+  },
+  "dependencies": {
+    "debug": "~0.7.2",
+    "is": "~0.0.4",
+    "sc-discovery": "git+ssh://git@github.com:strongloop/sc-discovery.git"
+  }
+}
