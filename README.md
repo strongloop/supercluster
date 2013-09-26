@@ -8,7 +8,7 @@ not work in any case except when all hosts are on the same subnet. Trackers
 employing HTTP REST APIs are the solution for nodes where the number is a few
 thousand or less and spread across the Internet. If there is need for larger
 networkers, a DHT should scale into the millions, but has latency and
-synchronization issues we'll have to solves.
+synchronization issues we'll have to solve.
 
 # SuperCluster Overview
 
