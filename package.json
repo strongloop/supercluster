@@ -4,7 +4,7 @@
   "description": "Enables distributed programming with Node.js.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test" : "./node_modules/.bin/mocha --reporter list"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
     "debug": "~0.7.2",
     "is": "~0.0.4",
     "sc-discovery": "git+ssh://git@github.com:strongloop/sc-discovery.git"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "request": "~2.27.0"
   }
 }
