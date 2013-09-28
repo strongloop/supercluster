@@ -22,11 +22,11 @@
   },
   "dependencies": {
     "debug": "~0.7.2",
-    "is": "~0.0.4",
+    "is2": "~0.0.4",
+    "request": "~2.27.0",
     "sc-discovery": "git+ssh://git@github.com:strongloop/sc-discovery.git"
   },
   "devDependencies": {
-    "mocha": "~1.13.0",
-    "request": "~2.27.0"
+    "mocha": "~1.13.0"
   }
 }
