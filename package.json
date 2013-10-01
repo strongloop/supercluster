@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "debug": "~0.7.2",
+    "funcserialize": "~0.0.2",
     "is2": "~0.0.4",
     "request": "~2.27.0",
     "sc-discovery": "git+ssh://git@github.com:strongloop/sc-discovery.git"
