@@ -1,19 +1,16 @@
 'use strict';
-var util = require('util');
 var MasterExp = require('../lib/Master');
 var Master = new MasterExp.Master();
-var data = { role: 'master' };
 var debug = require('debug')('sc:example:master');
+
+var f = function(a,b,c) { console.log('Hello %s %s!',a,b); return c; };
+var args = ['distributed', 'world', 'hmm'];
 
 Master.on('workerAvailable', function(name, worker, reason) {
   debug('workerAvailable', name, worker, reason);
-  var f = function(a,b,c) { console.log('Hello %s %s!',a,b); return c; };
 
-  Master.sendTaskToWorker(worker, f, ['distributed', 'world', 'hmm'], function(err, res, body) {
-    if (err) {
-      debug('Error on sendTaskToWorker',err);
-      return;
-    }
+  Master.taskWorker(worker, f, args, function(err, res, body) {
+    if (err) return debug('Error on taskWorker',err);
     debug('Work complete: ',body);
   });
 });
