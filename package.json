@@ -21,6 +21,7 @@
     "url": "https://github.com/strongloop/supercluster/issues"
   },
   "dependencies": {
+    "config-js": "~0.0.1",
     "debug": "~0.7.2",
     "funcserialize": "~0.0.2",
     "is2": "~0.0.4",
