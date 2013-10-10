@@ -21,14 +21,17 @@
     "url": "https://github.com/strongloop/supercluster/issues"
   },
   "dependencies": {
+    "async": "~0.2.9",
     "config-js": "~0.0.1",
     "debug": "~0.7.2",
     "funcserialize": "~0.0.2",
-    "is2": "~0.0.4",
+    "is2": "~0.0.5",
+    "mkdirp": "~0.3.5",
     "request": "~2.27.0",
     "sc-discovery": "git+ssh://git@github.com:strongloop/sc-discovery.git"
   },
   "devDependencies": {
-    "mocha": "~1.13.0"
+    "mocha": "~1.13.0",
+    "optimist": "~0.6.0"
   }
 }
