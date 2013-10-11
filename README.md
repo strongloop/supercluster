@@ -1,6 +1,11 @@
 SuperCluster
 ============
 
+Right now, SuperCluster is not-yet-ready for use. At this time, you can only
+send a task as a function or a file to a remote worker. The global event bus, 
+dicovery outside of a LAN and many key features are not yet implemented. If you
+are interested in contributing, please get in touch with any of the committers.
+
 # SuperCluster Overview
 
 A module to make it easy to distribute work across multiple network-connected
