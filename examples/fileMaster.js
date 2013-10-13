@@ -10,7 +10,7 @@ var task = {
 };
 
 Master.on('workerTaskComplete', function(task, worker, result) {
-  //debug('workerTaskComplete task:',task,'worker:',worker,'result:',result);
+  debug('workerTaskComplete task:',task,'worker:',worker,'result:',result);
 });
 
 Master.on('workerAvailable', function(name, worker, reason) {
