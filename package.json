@@ -22,12 +22,14 @@
   },
   "dependencies": {
     "async": "~0.2.9",
+    "async-err": "~0.0.0",
     "config-js": "~0.0.1",
     "debug": "~0.7.2",
     "exec": "~0.0.6",
     "funcserialize": "~0.0.2",
     "github-url": "~1.0.0",
     "is2": "~0.0.5",
+    "json-rest-api": "~0.0.1",
     "mkdirp": "~0.3.5",
     "request": "~2.27.0",
     "sc-discovery": "git+ssh://git@github.com:strongloop/sc-discovery.git"
