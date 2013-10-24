@@ -2,6 +2,7 @@
 var MasterExp = require('../lib/Master');
 var Master = new MasterExp.Master();
 var debug = require('debug')('sc:example:master');
+var inspect = require('util').inspect;
 
 var task = {
   type: 'github',
@@ -17,8 +18,14 @@ var task = {
   }
 };
 
-Master.on('workerTaskComplete', function(task, worker, result) {
-  debug('workerTaskComplete task:',task,'worker:',worker,'result:',result);
+Master.on('workerTaskComplete', function(taskResult) {
+  debug('workerTaskComplete taskResult: '+inspect(taskResult));
+  debug('workerTaskComplete task: '+inspect(taskResult.task));
+  debug('workerTaskComplete worker:'+inspect(taskResult.worker));
+  if (taskResult.result)
+    debug('workerTaskComplete result:'+inspect(taskResult.result));
+  if (taskResult.err)
+    debug('workerTaskComplete err:'+inspect(taskResult.err));
 });
 
 Master.on('workerAvailable', function(name, worker, reason) {
