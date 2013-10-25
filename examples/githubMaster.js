@@ -22,8 +22,11 @@ Master.on('workerTaskComplete', function(taskResult) {
   debug('workerTaskComplete taskResult: '+inspect(taskResult));
   debug('workerTaskComplete task: '+inspect(taskResult.task));
   debug('workerTaskComplete worker:'+inspect(taskResult.worker));
+  debug('workerTaskComplete master:'+inspect(taskResult.master));
+
   if (taskResult.result)
     debug('workerTaskComplete result:'+inspect(taskResult.result));
+
   if (taskResult.err)
     debug('workerTaskComplete err:'+inspect(taskResult.err));
 });
