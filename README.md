@@ -57,8 +57,6 @@ To be done:
 
 ## How it Works
 
-### Discovery
-
 #### Overview
 SuperCluster has three factory methods to create masters, workers and trackers.
 The master and worker map to their counterparts in cluster. The tracker exists
