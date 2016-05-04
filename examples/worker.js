@@ -1,3 +1,8 @@
+// Copyright IBM Corp. 2013. All Rights Reserved.
+// Node module: supercluster
+// This file is licensed under the MIT License.
+// License text available at https://opensource.org/licenses/MIT
+
 'use strict';
 var argv = require('optimist')
             .default('port', 9998)

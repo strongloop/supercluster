@@ -1,3 +1,8 @@
+// Copyright IBM Corp. 2013. All Rights Reserved.
+// Node module: supercluster
+// This file is licensed under the MIT License.
+// License text available at https://opensource.org/licenses/MIT
+
 var assert = require('assert');
 var RestApi = require('../lib/RestApi').RestApi;
 var request = require('request');

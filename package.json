@@ -4,7 +4,7 @@
   "description": "Enables distributed programming with Node.js.",
   "main": "index.js",
   "scripts": {
-    "test" : "./node_modules/.bin/mocha --reporter list"
+    "test": "./node_modules/.bin/mocha --reporter list"
   },
   "repository": {
     "type": "git",
